@@ -15,14 +15,5 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/satrapade/advanced-chat.git"
   },
-  "author": "Tamas Piros",
-  "url": "http://tamas.io",
-  "email": "me@tamas.io",
-  "license": "free",
-  "bugs": {
-    "url": "https://github.com/satrapade/advanced-chat/issues"
-  },
-  "homepage": "https://github.com/satrapade/advanced-chat"
 }
