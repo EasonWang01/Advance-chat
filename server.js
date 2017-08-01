@@ -244,9 +244,10 @@ io.sockets.on("connection", function (socket) {
 			if (found && socket.id !== whisperId) {
 				var whisperTo = whisperStr[1];
 				var whisperMsg = whisperStr[2];
+				socket.emit('sendWhisper');
 				//socket.emit("whisper", { name: "You" }, msTime, people[socket.id], whisperMsg);
 				io.to(whisperId).emit("whisper", msTime, people[socket.id], whisperMsg);
-				socket.emit('sendWhisper');
+
 			} else {
 				socket.emit("update", "Can't find " + whisperTo);
 			}
