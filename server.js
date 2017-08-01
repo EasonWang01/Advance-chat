@@ -254,7 +254,7 @@ io.sockets.on("connection", function (socket) {
 				socket.emit("update", "Can't find " + whisperTo);
 			}
 		} else {
-			if (io.sockets.manager.roomClients[socket.id]['/'+socket.room] !== undefined ) {
+			if (io.sockets.adapter.sids[socket.id]['/'+socket.room] !== undefined ) {
 				io.sockets.in(socket.room).emit("chat", msTime, people[socket.id], msg);
 				socket.emit("isTyping", false);
 				if (_.size(chatHistory[socket.room]) > 10) {
