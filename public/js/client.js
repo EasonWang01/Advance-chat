@@ -387,8 +387,7 @@ socket.on("history", function(data) {
     $("#msgs").append("<li><strong><span class='text-muted'>" + timeFormat(msTime) + person.name + "</span></strong> "+s+": " + msg + "</li>");
   });
 
-  socket.on('sendWhisper', () => {
-    console.log(555)
+  socket.on('sendWhisper', function(){
     $("#msgs").append("<li>Whisper send!</li>");
   })
 
