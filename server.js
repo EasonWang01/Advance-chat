@@ -175,6 +175,11 @@ function purge(s, action) {
 io.sockets.on("connection", function (socket) {
   socket.emit('test')
 
+socket.on('t', () => {
+	console.log(555)
+	socket.emit('test')
+})
+
 	socket.on("joinserver", function (name, device) {
 		var exists = false;
 		var ownerRoomID = inRoomID = null;

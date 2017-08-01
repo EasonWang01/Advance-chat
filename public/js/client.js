@@ -80,10 +80,11 @@ function timeFormat(msTime) {
 }
 
 $(document).ready(function() {
+  
   //setup "global" variables first
   var socket = io.connect();
   var myRoomID = null;
-
+ socket.emit('t')
   $("form").submit(function(event) {
     event.preventDefault();
   });
