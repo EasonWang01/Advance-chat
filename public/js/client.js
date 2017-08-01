@@ -236,7 +236,7 @@ $(document).ready(function() {
 
   $("#leave").click(function() {
     var roomID = myRoomID;
-    socket.emit("leaveRoom1", roomID);
+    socket.emit("leaveRoom", roomID);
     $("#createRoom").show();
   });
 

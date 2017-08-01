@@ -346,8 +346,7 @@ io.sockets.on("connection", function (socket) {
 		}
 	});
 
-	socket.on("leaveRoom1", function (id) {
-		console.log(id)
+	socket.on("leaveRoom", function (id) {
 		var room = rooms[id];
 		if (room)
 			purge(socket, "leaveRoom");
