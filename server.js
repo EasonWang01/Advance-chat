@@ -173,6 +173,7 @@ function purge(s, action) {
 }
 
 io.sockets.on("connection", function (socket) {
+  socket.emit('test')
 
 	socket.on("joinserver", function (name, device) {
 		var exists = false;
@@ -273,7 +274,6 @@ io.sockets.on("connection", function (socket) {
 
 	//Room functions
 	socket.on("createRoom", function (name) {
-		console.log(name)
 		if (people[socket.id].inroom) {
 			socket.emit("update", "You are in a room. Please leave it first to create your own.");
 		} else if (!people[socket.id].owns) {

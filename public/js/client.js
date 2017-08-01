@@ -345,8 +345,8 @@ socket.on("history", function(data) {
     $("#msgs").append("<li>" + msg + "</li>");
   });
 
-    socket.on("test", function(msg) {
-    $("#msgs").append("<li>" + msg + "</li>");
+  socket.on("test", function(msg) {
+    console.log(123)
   });
 
   socket.on("update-people", function(data){
