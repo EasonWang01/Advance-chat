@@ -261,7 +261,7 @@ io.sockets.on("connection", function (socket) {
 			} else {
 				socket.emit("update", "Please connect to a room.");
 				
-				socket.emit("sendWhisper");
+				socket.emit("test");
 			}
 		}
 	});
