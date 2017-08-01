@@ -319,14 +319,14 @@ socket.on("joined", function() {
     var lat = position.coords.latitude;
     var lon = position.coords.longitude;
     //consult the yahoo service
-    $.ajax({
-      type: "GET",
-      url: "https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20geo.placefinder%20where%20text%3D%22"+lat+"%2C"+lon+"%22%20and%20gflags%3D%22R%22&format=json",
-      dataType: "json",
-       success: function(data) {
-        socket.emit("countryUpdate", {country: data.query.results.Result.countrycode});
-      }
-    });
+    // $.ajax({
+    //   type: "GET",
+    //   url: "https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20geo.placefinder%20where%20text%3D%22"+lat+"%2C"+lon+"%22%20and%20gflags%3D%22R%22&format=json",
+    //   dataType: "json",
+    //    success: function(data) {
+    //     socket.emit("countryUpdate", {country: data.query.results.Result.countrycode});
+    //   }
+    // });
   }
 });
 
