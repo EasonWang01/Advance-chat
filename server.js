@@ -259,7 +259,7 @@ io.sockets.on("connection", function (socket) {
 					chatHistory[socket.room].push(people[socket.id].name + ": " + msg);
 				}
 			} else {
-				socket.emit("update", "Please connect to a room.");
+				socket.emit("update", "Please connect to a room!.");
 				
 				socket.emit("test");
 			}
