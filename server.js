@@ -244,6 +244,7 @@ io.sockets.on("connection", function (socket) {
 			if (found && socket.id !== whisperId) {
 				var whisperTo = whisperStr[1];
 				var whisperMsg = whisperStr[2];
+				socket.emit("update", "whisper send!");
 				io.to(whisperId).emit("whisper", msTime, people[socket.id], whisperMsg);
 
 			} else {
@@ -259,9 +260,7 @@ io.sockets.on("connection", function (socket) {
 					chatHistory[socket.room].push(people[socket.id].name + ": " + msg);
 				}
 			} else {
-				socket.emit("update", "Please connect to a room!.");
-				
-				socket.emit("test");
+				socket.emit("update", "Please connect to a room.");
 			}
 		}
 	});
