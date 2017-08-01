@@ -244,14 +244,13 @@ io.sockets.on("connection", function (socket) {
 			if (found && socket.id !== whisperId) {
 				var whisperTo = whisperStr[1];
 				var whisperMsg = whisperStr[2];
-				socket.emit("whisper", { name: "You" }, whisperMsg);
-				io.sockets.socket(whisperId).emit("whisper", msTime, people[socket.id], whisperMsg);
+				//socket.emit("whisper", { name: "You" }, msTime, people[socket.id], whisperMsg);
+				io.to(whisperId).emit("whisper", msTime, people[socket.id], whisperMsg);
+				socket.emit('sendWhisper');
 			} else {
 				socket.emit("update", "Can't find " + whisperTo);
 			}
 		} else {
-			console.log(io.sockets.adapter.sids[socket.id][socket.room])
-			console.log(socket.room)
 			if (io.sockets.adapter.sids[socket.id][socket.room] !== undefined) {
 				io.sockets.in(socket.room).emit("chat", msTime, people[socket.id], msg);
 				socket.emit("isTyping", false);

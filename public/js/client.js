@@ -338,7 +338,7 @@ socket.on("history", function(data) {
     });
   } else {
     $("#msgs").append("<li><strong><span class='text-warning'>No past messages in this room.</li>");
-  }
+  }000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
 });
 
   socket.on("update", function(msg) {
@@ -386,6 +386,10 @@ socket.on("history", function(data) {
     }
     $("#msgs").append("<li><strong><span class='text-muted'>" + timeFormat(msTime) + person.name + "</span></strong> "+s+": " + msg + "</li>");
   });
+
+  socket.on('sendWhisper', () => {
+    $("#msgs").append("<li>Whisper send!</li>");
+  })
 
   socket.on("roomList", function(data) {
     $("#rooms").text("");
