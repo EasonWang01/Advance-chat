@@ -4,14 +4,18 @@
   "description": "node.js/socket.io chat app",
   "main": "server.js",
   "dependencies": {
+    "body-parser": "^1.17.2",
     "ejs": "~0.8.5",
-    "express": "~3.4.8",
+    "express": "^4.15.3",
+    "method-override": "^2.3.9",
     "node-uuid": "~1.4.1",
     "socket.io": "^2.0.3",
     "underscore": "~1.5.2"
   },
   "devDependencies": {},
-  "scripts": {},
+  "scripts": {
+    "serve": "nodemon server.js"
+  },
   "repository": {
     "type": "git"
   }
