@@ -81,7 +81,7 @@ function timeFormat(msTime) {
 
 $(document).ready(function() {
   //setup "global" variables first
-  var socket = io.connect();
+  var socket = io.connect("https://chat.sakatu.com/");
   var myRoomID = null;
 
   $("form").submit(function(event) {
