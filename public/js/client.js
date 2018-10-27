@@ -104,8 +104,11 @@ $(document).ready(function() {
     $("#join").attr('disabled', 'disabled');
   }
 
-  //enter screen
-  $("#nameForm").submit(function() {
+  document.getElementById('nameForm').addEventListener('click', () => {
+    joinLobby();
+  })
+
+  function joinLobby() {
     var name = $("#name").val();
     var device = "desktop";
     if (navigator.userAgent.match(/Android|BlackBerry|iPhone|iPad|iPod|Opera Mini|IEMobile/i)) {
@@ -121,7 +124,7 @@ $(document).ready(function() {
       toggleChatWindow();
       $("#msg").focus();
     }
-  });
+  }
 
   $("#name").keypress(function(e){
     var name = $("#name").val();
